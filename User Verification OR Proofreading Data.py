@@ -1,4 +1,4 @@
-# User Verification ~ Asks the user if they accept what they wrote
+# User Verification/Proofreading data ~ Asks the user if they accept what they wrote
 # Python code 
 # Created by Ongl syn cwympo 
 # https://github.com/Ongl-syn-cwympo
