@@ -13,3 +13,19 @@ Once we know our data is valid (i.e. it is logical, and in the right format, etc
 
 The purpose of data verification is to ensure that data that are gathered are as accurate as possible, and to minimize human and instrument errors 
 including those which arise during data processing.
+
+
+# Double-entry data & the explination on why it can be tricky
+
+In general the whole "equal" question can be a bit tricky. Though if you're comparing more complicated things, like your own data structure you'll have to sit
+down and think "what does it mean for these two things to be equal?". For instance suppose you have a data structure that is the representation of a person in a
+DB table or in a CSV or something and it looks like this Person(id, last_name, first_name, created_at) for two persons to be equal, do all fields have to be
+equal? do we only compare last_name and first_name or maybe also id? This isn't some "trick question" there isn't really a correct answer. You'll have to be
+cognizant of how other things use the equality you define. I don't know python well but in Java if you define a custom equality you'll have to be careful
+because e.g. HashMap will use it under the hood. 
+
+finally, please make my inner mathematician happy and make sure your equality is sane. I.e. it's symmetric (a == a  ... lol JS console.log(NaN == NaN) outputs
+false), commutative (a == b implies that b == a) and transitive (a == b && b == c implies a == c) you want these things to hold that all the intuitive reasoning
+you do with equality is actually sound. 
+
+If you want to compare more complicated data structures, considering that python is an untyped language you might want to google for "deep equals" which is the common term for "traverse data structure and compare element wise".
